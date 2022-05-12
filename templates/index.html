@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv = "X-UA-Compatible" content="IE=edge"/>
+        <meta name = "viewport" content="width=device-width, initial-scale = 1.0"/>
+        <title>Pirateflix</title>
+
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel = "stylesheet" href="/static/css/style.css">
+
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
+    </head>
+
+    <body>
+
+        <div class = "toolbar" id = "toolbar">
+            <img src = "static/img/off.png" class = "toolbar_logo">
+            <label>
+                <output type="text" id = "tickets" value="0">
+            </label>
+
+            <div class = "right_icons">
+                <img src = "static/img/search.png" title = "Search" class = "toolbar_signin">
+                <a class = "active" href="/home">
+                    <img src = "static/img/home.png"  title = "Home" class = "toolbar_signin"></a>
+                <a href="/list">
+                    <img src = "static/img/clapperboard.png" title = "My List" class="toolbar_signin"></a>
+
+                    <img src="static/img/ticketss.png" title="Get Tickets" class="toolbar_signin" data-toggle="modal" data-target="#exampleModalCenter">
+
+                <a href="https://github.com/sapphireten/webapps">
+                    <img src = "static/img/github.png" title = "GitHub" class = "toolbar_signin"></a>
+
+                <a href="/about">
+                    <img src = "static/img/ab.png" title = "More Info" class = "toolbar_signin"></a>
+
+                        <label>
+                            <output type="text" id = "Tickets"  value="0">
+                        </label>
+                </div>
+            </div>
+        </div>
+
+        <!--HEADER-->
+        <div class = "heading">
+            <div class = "heading_container">
+                <h1 class = "heading_title"> Jurassic Bark</h1>
+                <div class = "heading_buttons">
+                    <button type = "button" id = "play" class="head_button">Play</button>
+                    <button class="head_button" onclick="decrementValue()">My List</button>
+                </div>
+                <div class="head_desc">
+                    Movie plot would go in here ... just writing out contents for now to be updated later. A group of people go
+                    to a cabin in the woods in the middle of nowhere and are taken away by a group of people that have lived there
+                    for many years and ... blah blah blah blah blah
+                </div>
+            </div>
+            <div class="head_footer"></div>
+        </div>
+
+        <div class ="row">
+            <h2>My List </h2>
+            <div class = "movie_rows">
+            </div>
+        </div>
+
+
+        <!--ORIGINALS-->
+        <div class ="row">
+            <h2>Pirateflix Originals</h2>
+            <div class = "movie_rows">
+                <div class = "movies">
+                    <img src = "static/img/goodzilla.jpg"  class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/kingpong.jpg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/alpacolypse.jpg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/chew.jpg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/emo.jpg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/redshift.jpg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/ironingman.jpg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/yearzero.jpg"  class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/sodaban.jpg"  class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/fasttoys.jpg"  class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/tryhard.png"  class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/starshrek.jpg"  class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/oranges.jpg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+
+
+            </div>
+        </div>
+        <!--TRENDING-->
+        <div class ="row">
+            <h2>Trending Now</h2>
+            <div class = "movie_rows">
+                <div class="movies">
+                    <img src = "static/img/frog.jpg"  class = "movie_row" class = "img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/finallevel.jpg"  class = "movie_row" class = "img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" class = "movie_row" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/mission.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/jurassic bark.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/monopoly.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/vhs.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/oranges.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/energizer.jpg"  class = "movie_row" class = "img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/woody.jpg"  class = "movie_row" class = "img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" class = "movie_row" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/lordofthememes.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/freezing.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+        </div>
+    </div>
+        <!--TOP RATED-->
+        <div class ="row">
+            <h2>Popular on Pirateflix</h2>
+            <div class = "movie_rows">
+                <div class="movies">
+                    <img src = "static/img/tryhard.png"  class = "movie_row" class = "img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/freddy.jpg"  class = "movie_row" class = "img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" class = "movie_row" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/crocodile.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/childrenofcorn.jpg" class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/littlestcaesar.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/toyznthehood.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/iphone.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/sodaban.jpg"  class = "movie_row" class = "img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" class = "movie_row" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/mrclean.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class="movies">
+                    <img src = "static/img/jurassic bark.jpg"  class = "movie_row">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+        </div>
+    </div>
+
+
+        </div>
+        <!--WORST-->
+        <div class ="row">
+            <h2>Pirated Movies</h2>
+            <div class = "movie_rows">
+                <div class = "movies">
+                    <img src = "static/img/paws.jpg"  class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/hungerpains.jpg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/starshrek.jpg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/dadofdead.png" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/freezing.jpg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/hungryhippos.jpeg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/kingpong.jpg" class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/yearzero.jpg"  class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/ironingman.jpg"  class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+                <div class = "movies">
+                    <img src = "static/img/lordofthememes.jpg"  class = "movie_row" class ="img-fluid">
+                    <img src =  "static/img/play-button.png" class = "play-btn" class = "img-fluid" data-toggle="modal" data-target="#modaltrailer">
+                    <img src = "static/img/addto.png" class = "add-btn" class = "img-fluid">
+                </div>
+        </div>
+</div>
+
+
+        <div class="modal fade" id="modaltrailer">
+            <!-- This means this is a bootstrap modal -->
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <video width = "100%" controls preload="auto">
+                      <source src="static/img/movieintro.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="exampleModalCenter" tableindex = " -1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <!-- This means this is a bootstrap modal -->
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle"><b>Get Movie Tickets?</b> <img src="static/img/ticket.png"> </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <p>Watch ad for 1 credit: </p>
+                    <video id="myVideo" width="100%">
+                        <source src = "static/img/skittles.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" onclick="playVid(); incrementValue()">Play AD</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script src="static/js/code.js"></script>
+    </body>
+</html>

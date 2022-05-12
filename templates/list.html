@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Pirateflix List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="/static/css/tablestyle.css">
+      <link rel = "stylesheet" href="/static/css/style.css">
+
+	</head>
+
+    <body style="background-color: rgb(255, 192, 32);">
+
+    <div class = "toolbar" id = "toolbar">
+            <img src = "static/img/off.png" class = "toolbar_logo">
+            <div class = "right_icons">
+                <img src = "static/img/search.png" title = "search" class = "toolbar_signin">
+                <a href="/">
+                    <img src = "static/img/home.png" title = "Home" class = "toolbar_signin"></a>
+                <a class = "active" href="/table">
+                    <img src = "static/img/clapperboard.png" title = "My List" class="toolbar_signin"></a>
+                <a href="https://github.com/sapphireten/webapps">
+                    <img src = "static/img/github.png" title = "GitHub" class = "toolbar_signin"></a>
+                <a href="/about">
+                    <img src = "static/img/ab.png" title = "More Info" class = "toolbar_signin"></a>
+            </div>
+        </div>
+
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-4">
+					<h2 class="heading-section">My Added Movies</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="h5 mb-4 text-center">My Movies List</h3>
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+						    	<th>Movie Cover</th>
+						    	<th>Movie Title & Synopsis</th>
+						      <th>Rating</th>
+						      <th>Genre</th>
+						      <th>Release Year</th>
+						      <th>&nbsp;</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+                          {% for movie in movies %}
+						    <tr class="alert" role="alert">
+						    	<td>
+						    		<div class="img" style="background-image: url({{ movie.image }}")></div>
+						    	</td>
+						      <td>
+						      	<div class="email">
+						      		<span> {{ movie.name }}</span>
+						      		<span>Fugiat voluptates quasi nemo, ipsa perferendisfsdfadfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+                                    fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+                                    ffffffffffffffffffffffffffffffffffffff</span>
+						      	</div>
+						      </td>
+						      <td>
+                                  <div>
+                                      {{ movie.rating}}
+                                      <img src="/static/img/star.png" class="star" width="20px" height="20px" style="top: 40px" >
+                                  </div>
+                              </td>
+                                <td>{{ movie.genre }}</td>
+				          <td>{{ movie.year }}</td>
+						      <td>
+						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				          	</button>
+				        	</td>
+						    </tr>
+                          {% endfor %}
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+            const nav = document.getElementById('toolbar');
+            window.addEventListener('scroll', () => {
+                if(window.scrollY >= 100){
+                    nav.classList.add('nav_purple')
+                }
+                else{
+                    nav.classList.remove('nav_purple')
+                }
+            })
+        </script>
+
+	</body>
+</html>
+
